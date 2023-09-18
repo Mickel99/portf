@@ -1,0 +1,142 @@
+@use "../components/" as c;
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  font-family: c.$titleFont;
+  background-color: rgba(250, 250, 250, 0.4);
+  background-image: url(/src/assets/img/contact-us-image.jpg);
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: lighten;
+  margin-bottom: 5rem;
+  @include c.small {
+    height: 90vh;
+  }
+  &__title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0px 5px;
+    margin-top: 15px;
+    @include c.small {
+      margin: 0;
+    }
+    &__title-one {
+      text-align: center;
+      font-size: 25px;
+      font-weight: 400;
+      @include c.small {
+        font-size: 30px;
+        font-weight: 300;
+        animation: article-load 300ms ease-in var(--article-load-delay);
+        animation-fill-mode: forwards;
+        transform: translateY(-20px);
+        opacity: 0;
+        @include c.large {
+          font-size: 35px;
+        }
+      }
+    }
+    &__title-two {
+      margin-top: 0;
+      margin-bottom: 35px;
+      font-size: 22px;
+      font-weight: 400;
+      text-align: center;
+      @include c.small {
+        font-size: 25px;
+        animation: article-load 300ms ease-in var(--article-load-delay);
+        animation-fill-mode: forwards;
+        transform: translateY(-20px);
+        opacity: 0;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 60vw;
+      @include c.small {
+        width: 50vw;
+        animation: article-load 300ms ease-in
+          calc(var(--article-load-delay) + 200ms);
+        animation-fill-mode: forwards;
+        transform: translateY(-20px);
+        opacity: 0;
+        @include c.medium {
+          width: 40vw;
+        }
+        @include c.large {
+          width: 30vw;
+        }
+      }
+      &__label {
+        font-size: 16px;
+        font-weight: 300;
+        @include c.small {
+          font-size: 20px;
+        }
+      }
+      &__input {
+        width: 100%;
+        height: 2.8em;
+        outline: none;
+        border-radius: 18px;
+        outline-color: c.$secondaryBgColor;
+        color: c.$primaryColor;
+        border: 6px solid c.$secondaryBgColor;
+        font-size: 16px;
+        font-family: c.$titleFont;
+        @include c.medium {
+          height: 3.2em;
+        }
+      }
+      &__textarea {
+        width: 100%;
+        margin-top: 5px;
+        outline: none;
+        outline-color: c.$secondaryBgColor;
+        color: c.$primaryColor;
+        border-radius: 18px;
+        border: 6px solid c.$secondaryBgColor;
+        font-size: 16px;
+        font-family: c.$titleFont;
+      }
+      &__button {
+        text-align: center;
+        background-color: c.$secondaryBgColor;
+        color: c.$secondaryColor;
+        border: 1px c.$primaryColor;
+        border-radius: 18px;
+        margin-top: 15px;
+        margin-bottom: 35px;
+        font-size: medium;
+        width: 80px;
+        height: 35px;
+        cursor: pointer;
+        font-family: c.$titleFont;
+        transition: all 0.25s ease-in-out;
+        &:hover {
+          background-color: c.$secondaryBgColorOpacity;
+          color: c.$primaryColor;
+        }
+        @include c.small {
+          margin-bottom: 65px;
+        }
+      }
+    }
+  }
+}
